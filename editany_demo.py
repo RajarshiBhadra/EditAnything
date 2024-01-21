@@ -66,12 +66,12 @@ def create_demo_template(
                         value="Run EditAnying", interactive=True)
                 with gr.Tab("All region"):
                     source_image_clean = gr.Image(
-                        source="upload",
+                        sources="upload",
                         label="Image: Upload an image",
                         type="numpy",
                     )
                     run_button_allregion = gr.Button(
-                        label="Run EditAnying", interactive=True)
+                        value="Run EditAnying", interactive=True)
                 with gr.Row():
                     # enable_all_generate = gr.Checkbox(
                     #     label="All Region Generation", value=False
@@ -132,11 +132,11 @@ def create_demo_template(
                     # ref_image = gr.Image(
                     #     source='upload', label="Upload a reference image", type="pil", value=None)
                     ref_image = gr.Image(
-                        source="upload",
+                        sources="upload",
                         label="Upload a reference image and cover the region you want to use with sketch",
                         type="pil",
-                        tool="sketch",
-                        brush_color="#00FFBF",
+                        #tool="sketch",
+                        #brush_color="#00FFBF",
                     )
                     with gr.Row():
                         ref_auto_prompt = gr.Checkbox(
@@ -225,7 +225,7 @@ def create_demo_template(
 
                 with gr.Accordion("Advanced Options", open=False):
                     mask_image = gr.Image(
-                        source="upload",
+                        sources="upload",
                         label="Upload a predefined mask of edit region: Switch to Brush mode when using this!",
                         type="numpy",
                         value=None,
