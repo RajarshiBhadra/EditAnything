@@ -53,18 +53,17 @@ def create_demo_template(
                                 )
                         with gr.Row():
                             run_button_click = gr.Button(
-                                label="Run EditAnying", interactive=True
+                                value="Run EditAnying", interactive=True
                             )
                 with gr.Tab("Brush🖌️"):
                     source_image_brush = gr.Image(
-                        source="upload",
+                        sources="upload",
                         label="Image: Upload an image and cover the region you want to edit with sketch",
                         type="numpy",
-                        tool="sketch",
-                        brush_color="#00FFBF"
+                        interactive = True
                     )
                     run_button = gr.Button(
-                        label="Run EditAnying", interactive=True)
+                        value="Run EditAnying", interactive=True)
                 with gr.Tab("All region"):
                     source_image_clean = gr.Image(
                         source="upload",
